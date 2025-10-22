@@ -1,0 +1,67 @@
+/*
+ * App.css - Dark Blue and Gray Style
+ *
+ * This file provides global styles, CSS variables, and basic resets.
+ * It complements the Tailwind CSS classes used in App.jsx.
+ */
+
+/* 1. CSS Variables for Theme Colors (Matches App.jsx Tailwind classes) */
+:root {
+  /* Dark Mode Colors */
+  --color-dark-blue: #0A192F; /* A very dark, deep blue for the overall background */
+  --color-dark-gray: #1E293B; /* Slate 800 - for the card background */
+  --color-card-secondary: #334155; /* Slate 700 - for secondary backgrounds (like p-3 divs) */
+  --color-text-primary: #FFFFFF; /* White */
+  --color-text-secondary: #94A3B8; /* Slate 400 - for subdued text */
+  --color-accent: #38BDF8; /* Sky 400 - for highlights and titles */
+  --color-border-accent: #0284C7; /* Sky 600 - for borders */
+}
+
+/* 2. Global Reset and Box Model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. HTML Body and Root Styles */
+html,
+body,
+#root {
+  /* Ensure the app takes up the full screen height */
+  min-height: 100vh; 
+  /* Fallback color for the body background */
+  background-color: var(--color-dark-blue); 
+  /* Set a smooth text rendering for better font clarity */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Custom Font (Inter is already used in App.jsx, but we enforce it here) */
+/* The font can be imported here or linked in the public/index.html */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-primary);
+}
+
+/* 5. Custom Scrollbar (Optional, for a dark mode aesthetic) */
+/* This makes the scrollbar thinner and dark-themed */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-card-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-gray);
+}
